@@ -64,13 +64,13 @@ SELECT COUNT(*) AS num_players
 FROM Fifa
 WHERE STR_TO_DATE BETWEEN '2018-05-20' AND '2019-04-10';
 #How many players have joined their respective clubs date wise
-SELECT STR_TO_DATE  AS join_date,
+SELECT STR_TO_DATE(Joined, '%d-%m-%Y') AS join_date,
 COUNT(*) AS num_players
 FROM Fifa
 GROUP BY join_date
 ORDER BY join_date;
 #How many players have joined their respective clubs yearly
-SELECT YEAR(STR_TO_DATE AS join_year,
+SELECT YEAR(STR_TO_DATE(Joined, '%d-%m-%Y')) AS join_year,
 COUNT(*) AS num_players
 FROM Fifa
 GROUP BY join_year
