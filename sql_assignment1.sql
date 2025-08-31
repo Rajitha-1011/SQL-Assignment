@@ -1,7 +1,7 @@
-
+#database creation
  create database employee_db;
 use employee_db;
-
+#table creation
 create table employee_tb (
     employeeID int primary key,
     first_name varchar(50),
@@ -13,6 +13,7 @@ create table employee_tb (
     job_title varchar(50)
 );
 show tables;
+#insert values
 insert into employee_tb values
 (1, 'Rajitha', 'reddy', 55000.00, '2021-03-15', 'IT', 'Male', 'Software Engineer'),
 (2, 'satish', 'Reddy', 48000.00, '2020-07-20', 'HR', 'Female', 'HR Executive'),
@@ -22,7 +23,8 @@ insert into employee_tb values
 (6, 'Neha', 'Singh', 65000.00, '2019-04-10', 'Marketing', 'Female', 'Marketing Manager');
 
 select * from tbl_emp_detail_data;
-create table employeee as select * from tbl_employee_detail_data;
+#table name change
+create table employeee as select * from tbl_emp_detail_data;
 
 select * from employee;
 
@@ -34,7 +36,7 @@ order by emp_id desc limit 1;
 
 select * from employee
 order by rand() limit 1;
-
+#first name
 select upper(first_name) as first_name_upper from employee;
 select lower(first_name) as first_name_lower from employee;
 select concat(" ",first_name,last_name) as full_name from employee;
